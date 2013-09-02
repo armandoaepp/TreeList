@@ -1,0 +1,54 @@
+/*
+	treelist Styler
+*/
+
+#treelist, #treelist ul, #treelist li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#treelist{background:url(line1.gif) repeat-y;}
+#treelist li{
+	line-height:20px;
+	margin-top:1px;
+	position:relative;
+	width:100%;
+}
+/* IE leaves a blank space where span is added so this is to avoid that */
+* html #treelist li{
+	float:left;
+	display:inline;
+}
+
+#treelist li a{padding-left:28px;}
+#treelist li span{float:left;position:absolute;top:5px;left:5px;width:13px;height:13px;cursor:auto;font-size:0;}
+#treelist li span, #treelist li span.collapsed{background:url(collapsed.gif) no-repeat 0 0;}
+#treelist li span.expanded{background:url(expanded.gif) no-repeat 0 0;}
+
+/* sub levels */
+
+#treelist li ul{
+	margin-left:28px;
+	background:url(line1.gif) repeat-y;
+}
+#treelist li li{
+	background:url(line2.gif) no-repeat 0 0;
+}
+
+/* etc. */
+
+/* float fix */
+
+#treelist:after, #treelist ul:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#treelist, #treelist ul{display:block;}
+/*  \*/
+#treelist, #treelist ul{min-height:1%;}
+* html #treelist, * html #treelist ul{height:1%;}
+ /*  */
+#treelist ul{display:none;}
